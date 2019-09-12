@@ -1,0 +1,66 @@
+body{
+    background: #EEEE
+}
+.product-list{
+    max-width: 700px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+.product-list article{
+    background: #FFF;
+    border: 1px solid #DDD; 
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.product-list article:hover{
+    background: rgb(246, 246, 246);
+    transition: 0.2s;
+}
+.product-list article a{
+    height: 42px;
+    color: 	#da552f;
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid #da552f;
+    padding: 3px;
+    background: #FFF;
+    border-radius: 4px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-list p{
+    color: #999;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 20px 0 10px 0;
+}
+
+
+.product-list article a:hover{
+    background: #da552f;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all, 0.2s;
+}
+
+.product-list .acoes{
+    display: flex;
+    justify-content: space-between;
+    margin: auto auto 20px auto;
+}
+.product-list .acoes button{
+    border: none;
+    background: #da552f;
+    color: #FFF;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product-list .acoes button:hover{
+    opacity: 0.7;
+}

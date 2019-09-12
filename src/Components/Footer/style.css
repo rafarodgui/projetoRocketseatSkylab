@@ -1,0 +1,27 @@
+.article-footer{
+    background: #da552f;
+    box-sizing: border-box;
+    padding: 10px;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name{
+    font-weight: bold;
+    cursor: pointer;
+}
+.name:hover{
+    transform: translateY(-2px);
+    transition: all 200ms;
+}
+.hora{
+    cursor: pointer;
+}
+.hora:active{
+    margin-bottom: 5px;
+    font-size: 4rem;
+    transition: all 200ms;
+}
