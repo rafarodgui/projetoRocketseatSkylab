@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Components/Header/index'
-import Main from './Pages/main/index'
 import Footer from './Components/Footer/index'
+import Routes from './routes'
 
 export default class App extends Component{
 
@@ -9,7 +9,7 @@ export default class App extends Component{
         return (
         <div className="principal">
             <Header />
-            <Main />
+            <Routes />
             <Footer />
         </div>
         ); 

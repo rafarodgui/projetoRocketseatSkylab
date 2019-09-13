@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import api from '../../Services/api';
 import './style.css'
+import { Link } from 'react-router-dom';
 
 export default class Main extends Component{
 
@@ -8,7 +9,7 @@ export default class Main extends Component{
         super(props)
         this.state = {
             products: [],
-            productsInfo: {},
+            productInfo: {},
             page: 1,
         }
     }
@@ -18,32 +19,39 @@ export default class Main extends Component{
     }
 
     loadProducts = async (page = 1) => {
-        const response = await api.get(`/products?${page}`);
+        const response = await api.get(`/products?page=${page}`);
 
-        const { docs, ...productsInfo} = response.data;
+        const { docs, ...productInfo} = response.data;
 
-        this.setState({products: docs, productsInfo})
-
+        this.setState({products: docs, productInfo, page})
     }
 
     prevPage = () =>{
 
-    }
+        const { page, productInfo} = this.state;
 
-    nextPage = () => {
+        if(page === 1) return;
 
-        const {page, productsInfo} = this.state;
-
-        if(page === productsInfo.pages) return;
-
-        const pageNumber = page + 1;
+        const pageNumber = page -1;
 
         this.loadProducts(pageNumber);
     }
 
+    nextPage = () => {
+
+        const {page, productInfo} = this.state;
+
+        if(page === productInfo.pages) return;
+
+        const pageNumber = page + 1;
+
+        this.loadProducts(pageNumber);
+
+    }
+
     render(){
 
-        const { products } = this.state;
+        const { products, productInfo, page } = this.state;
 
         return (
             <div className="product-list">
@@ -52,13 +60,13 @@ export default class Main extends Component{
                     <strong>{product.title}</strong>
                     <p>{product.description}</p>
 
-                    <a href="#">Acessar</a>
+                    <Link to={`/products/${product._id}`}>Acessar</Link>
                    </article>
                )}
 
                 <div className="acoes">
-                    <button onClick={this.prevPage}>Anterior</button>
-                    <button onClick={this.nextPage}>Próximo</button>
+                    <button disabled={page === 1} onClick={this.prevPage}>Anterior</button>
+                    <button disabled={page === productInfo.pages} onClick={this.nextPage}>Próximo</button>
                 </div>
             </div>
         );
