@@ -1,0 +1,32 @@
+.product-info{
+    display: flex;
+    margin: 20px auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+    border: 1px solid #DDD;
+    padding: 10px;
+    border-radius: 10px;
+    background: #FFF;
+}
+
+.product-info h1{
+    margin-bottom: 15px;
+}
+.product-info p{
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.voltar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    background: #da552f;
+    max-width: 100px;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+}
